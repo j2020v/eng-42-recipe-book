@@ -20,6 +20,7 @@
 
 ## A recipe should have
 
+- Recipe_id
 - Name 
 - Ingredients list
 - Description
