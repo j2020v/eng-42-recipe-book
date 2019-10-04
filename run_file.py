@@ -22,8 +22,14 @@ conn_rdb = Recipe(server,database,username,password)
 # export recipe to a txt file
 #conn_rdb.write_one_recipe_to_txt(1)
 
-#  update object
-conn_rdb.update_recipe("dbo.recipes", "'ingredients'", "'mature cheddar and bread'", 2)
+# update object
+#conn_rdb.update_recipe("dbo.recipes", "ingredients", "'mature cheddar and bread'", 2)
+
+# more info on the location of the recipe
+
+
+
+
 
 
 

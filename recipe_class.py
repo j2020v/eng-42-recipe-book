@@ -1,4 +1,6 @@
 from connection import *
+import json
+import requests
 
 class Recipe(ConnectionMicrosoftServer):
 
@@ -45,5 +47,14 @@ class Recipe(ConnectionMicrosoftServer):
 
     # update object
     def update_recipe(self, table, column, value, recipe_id):
-        query_rows = self.filter_query(f"UPDATE {table} SET {column} =  {value} WHERE recipe_id = {recipe_id}")
+        query_rows = self.filter_query(f"UPDATE {table} SET {column} = {value} WHERE recipe_id = {recipe_id}")
+        self.conn_rdb.commit()
+
+    # more info on the location
+    def recipe_info(self, recipe_id):
+        
+
+
+
+
 
