@@ -1,25 +1,32 @@
+from connection import *
 from recipe_class import *
-from db_class import *
+server = 'localhost,1433'
+database = 'recipes_db'
+username = 'SA'
+password = 'Passw0rd2018'
 
-# List all recipes
-conn_rdb = Recipe(server, database, username, password)
-print(conn_rdb.list_all_recipes("recipes"))
+conn_rdb = Recipe(server,database,username,password)
+
+# adding a recipe
+#conn_rdb.create_recipe(4, "'Nutella pancakes'", "'Flour, egg and nutella'", "'For the sweet tooth'", "'Mix flour, egg and nutella until sticky and fry'", "'HA55NZ'")
+
+# delete a query
+#conn_rdb.destroy_query("dbo.recipes", 4)
+
+# list all recipes
+#print(conn_rdb.list_all_recipes("dbo.recipes"))
 
 # read one object
-conn_rdb = Recipe(server, database, username, password)
-query = (conn_rdb.read_one_recipe("recipes", "recipe_id", "2"))
-print(query)
-
-# # add a recipe NEED HELP ON ADDING !!!
-conn_rdb = Recipe(server, database, username, password)
-(conn_rdb.create_recipe("3", "'Peanut Butter banana'", "'Peanut butter and banana'", "'Amazing dessert'", "'Dip banana into peanut butter jar'", "'KT2 6EL'"))
-
-# dropping a query
-conn_rdb = Recipe(server, database, username, password)
-print(conn_rdb.destroy_a_query("recipes", "1"))
+#print(conn_rdb.read_one_recipe("dbo.recipes", 3))
 
 # export recipe to a txt file
-open_read_file_using_with('recipes.txt')
+#conn_rdb.write_one_recipe_to_txt(1)
+
+#  update object
+conn_rdb.update_recipe("dbo.recipes", "'ingredients'", "'mature cheddar and bread'", 2)
+
+
+
 
 
 
