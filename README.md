@@ -8,7 +8,7 @@
     - As a user I can read one recipe 
     - As a user I can destroy one recipe 
     - As a user I can should be able to export one recipe to txt file 
-    - As a user I should be able to get more info on the location (postocde) where the recipe was created 
+    - As a user I should be able to get more info on the location (postcode) where the recipe was created 
      EXTRA TIME - go get some information about ingredients 
 ## Must have
 

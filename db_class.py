@@ -2,7 +2,7 @@
 # Start defining methods
 
 
-# all() --- have this one the db_class
+# all() --- have this on the db_class
     # gets all the instances from DB
         #get each record
         #create individual instances of recipe
