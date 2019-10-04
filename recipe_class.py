@@ -1,14 +1,14 @@
-import json
-
 import pyodbc
-
-from db_connect import cursor, conn_rdb
 
 server = 'localhost,1433'
 database = 'recipes_db'
 username = 'SA'
 password = 'Passw0rd2018'
 
+conn_rdb = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+password)
+#print(conn_nwdb)
+
+cursor = conn_rdb.cursor()
 # Define a class recipe
 
 class Recipe():
@@ -21,19 +21,16 @@ class Recipe():
         self.cursor = self.conn_rdb.cursor()
 
 
-
     def __filter_query(self, query):
         return self.cursor.execute(query)
-
 
     def sql_query(self, query):
         return self.__filter_query(query).execute(query)
 
-
     def sql_query_fetchone(self, query):
         return self.__filter_query(query).fetchone()
 
-
+    # reads all objects
     def list_all_recipes(self, table):
         all_recipes_query = self.__filter_query(f"SELECT * FROM {table}")
         while True:
@@ -58,20 +55,11 @@ class Recipe():
         (cursor.execute(f"INSERT INTO recipes ({recipe_id}, {recipe_name},{ingredients}, {describe_recipe},{instructions}, {postcode})"))
         conn_rdb.commit()
 
-    def open_read_file_using_with(file):
-        try:
-            with open(file, 'r') as recipes:  # does not need to close method
-                for line in recipes.readlines():
-                    print(line.rstrip('\n'))
-        except FileNotFoundError as errmsg:
-            print('There has been a syntax error', errmsg)
-            raise
-        finally:
-            print('\n Execution_completed')
 # save()
     # saves a recipe object to the DB (make it persistent)
 
-
-
-# Destroy
+# destroy
     # one object
+    def destroy_a_query(self, table, recipe_id):
+        dropping_query = self.__filter_query(f"DELETE FROM {table} WHERE ID = {recipe_id}")
+        return dropping_query
