@@ -52,7 +52,17 @@ class Recipe(ConnectionMicrosoftServer):
 
     # more info on the location
     def recipe_info(self, recipe_id):
-        
+        query_rows = self.filter_query(f"SELECT postcode FROM dbo.recipes WHERE recipe_id = {recipe_id}")
+        postcode_query = query_rows.fetchone()
+        postcode = ' '.join([row for row in postcode_query])
+        url = 'https://postcodes.io/postcodes/'
+        request_postcode = requests.get(url + postcode)
+        post_code_dict = request_postcode.json()
+        details = post_code_dict
+        print(details)
+
+    #get some more info about ingredients 
+
 
 
 

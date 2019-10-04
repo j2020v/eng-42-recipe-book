@@ -26,7 +26,7 @@ conn_rdb = Recipe(server,database,username,password)
 #conn_rdb.update_recipe("dbo.recipes", "ingredients", "'mature cheddar and bread'", 2)
 
 # more info on the location of the recipe
-
+conn_rdb.recipe_info(3)
 
 
 
