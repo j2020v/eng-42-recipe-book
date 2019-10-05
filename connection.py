@@ -9,9 +9,8 @@ class ConnectionMicrosoftServer():
         self.database = database
         self.username = username
         self.password = password
-        self.conn_rdb = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + self.server + ';DATABASE=' + self.database + ';UID=' + self.username + ';PWD=' + self.password)
-        self.cursor = self.conn_rdb.cursor()
-
+        self.conn_recipe = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + self.server + ';DATABASE=' + self.database + ';UID=' + self.username + ';PWD=' + self.password)
+        self.cursor = self.conn_recipe.cursor()
 
     def filter_query(self, query):
         return self.cursor.execute(query)

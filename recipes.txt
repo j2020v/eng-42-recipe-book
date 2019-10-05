@@ -1,1 +1,1 @@
-(1, 'Corn on the cob', 'corn and butter ', 'A nice side dish for a soulfood meal', 'Smother butter on cob and place on the grill for 2 mins', 'UB8 2XX')
+(3, 'Chicken adobo', 'chicken, soy sauce, vinegar, bay leaf, garlic and black pepper', 'a Filipino delicacy', 'fry chicken until golden, pour soy sauce and vinegar all over the chicken and let simmer for 25 mins, toss garlic and bay leaf', 'E2 8LU')
